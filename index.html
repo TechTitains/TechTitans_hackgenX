@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envira - Environmental Awareness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Envira</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#pollution">Pollution</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="slider" id="home">
+        <div class="slide-content">
+            <h1>Save Our Planet</h1>
+            <p>Together we can make a difference</p>
+        </div>
+    </div>
+
+    <section class="pollution-cards" id="pollution" aria-label="Pollution Types">
+        <article class="card water-pollution">
+          <h2>Water Pollution</h2>
+          <p>
+            Water pollution harms marine life and puts human health at risk. 
+            Protecting our lakes, rivers, and oceans is essential to ensure clean water for everyone.
+          </p>
+          <img 
+            src="/Images/water_pollution.jpeg" 
+            alt="Polluted water body" 
+            class="card-image"
+          />
+          <button class="learn-more" aria-label="Learn more about water pollution">
+            Discover More
+          </button>
+        </article>
+      
+        <article class="card air-pollution">
+          <h2>Air Pollution</h2>
+          <p>
+            Air pollution is a serious threat to our health and environment. 
+            Clean air is essential for life — let's take action to reduce emissions and pollution to breathe easier.
+          </p>
+          <img 
+            src="/Images/air_pollution.jpeg" 
+            alt="Smoggy city skyline" 
+            class="card-image"
+          />
+          <button class="learn-more" aria-label="Learn more about air pollution">
+            Find Out More
+          </button>
+        </article>
+      </section>
+
+      <!-- Vanasaya card -->
+      <section 
+      class="vanasaya-section" 
+      style="
+        width: 100%;
+        background-color: #f0f8f5;
+        padding: 3rem 1rem;
+        display: flex;
+        justify-content: center;
+      "
+    >
+      <div 
+        class="card wide-card" 
+        style="
+          width: 100%;
+          max-width: 1200px;
+          background-color: #ffffff;
+          padding: 0;
+          border-radius: 12px;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          text-align: center;
+        "
+      >
+        <!-- Wide Banner Image -->
+        <img 
+          src="/Images/vanasaya.jpg" 
+          alt="People planting trees in a green field" 
+          style="
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+          "
+        />
+    
+        <!-- Content -->
+        <div style="padding: 2rem;">
+          <h2 style="margin-bottom: 1rem; color: #2d6a4f;">
+            Plant Trees, Save Earth
+          </h2>
+          <p style="font-size: 1rem; line-height: 1.6; color: #333;">
+            Trees are vital for our planet's health. They provide oxygen, reduce 
+            carbon dioxide, prevent soil erosion, and support wildlife. Join our 
+            initiative to make Earth greener.
+          </p>
+          <a href="vanasaya.html"><button 
+          
+            class="vanasaya-btn" 
+            style="
+              background-color: #2d6a4f;
+              color: #fff;
+              padding: 0.75rem 1.5rem;
+              border: none;
+              border-radius: 6px;
+              font-size: 1rem;
+              cursor: pointer;
+              margin-top: 1.5rem;
+            "
+          >
+            Vanasaya
+          </button></a>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Envira</h3>
+                <p>Making Earth a better place</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@envira.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Envira. All rights reserved.</p>
+        </div>
+    </footer>
+
+   
+    <iframe 
+    src="chatbot.html" 
+    style="position: fixed; bottom: 20px; right: 20px; width: 350px; height: 500px; border: none; border-radius: 12px;"
+  ></iframe>
+    <script src="main.js"></script>
+</body>
+</html>
