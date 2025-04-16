@@ -117,7 +117,6 @@ $conn->close();
   text-decoration: none;
   padding: 0.5rem 1rem;
   transition: 0.3s;
-}
 
 .nav-links li a:hover {
   background-color:lightgreen;
@@ -162,23 +161,19 @@ $conn->close();
     margin-top: 20px;
 }
 
-
-
-
-
 </style>
 
 </head>
-<body >
+<body>
 
 <nav class="navbar">
       <div class="logo">Envira</div>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#pollution">Pollution</a></li>
+        <li><a href="airlog.php">Pollution</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="notification.php"  ><i  class="bi bi-envelope-exclamation-fill" ></i></a></li>
+        <li><a href="notification.php"><i  class="bi bi-envelope-exclamation-fill" ></i></a></li>
       </ul>
     </nav>
 

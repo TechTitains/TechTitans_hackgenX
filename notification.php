@@ -49,9 +49,9 @@ body{
 <nav class="navbar">
       <div class="logo">Envira</div>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#pollution">Pollution</a></li>
+        <li><a href="airlog.php">Pollution</a></li>
         <li><a href="contact.html">Contact</a></li>
         <!-- <li><a href="notification.php"  ><i  class="bi bi-envelope-exclamation-fill" ></i></a></li> -->
       </ul>

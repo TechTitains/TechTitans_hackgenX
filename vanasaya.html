@@ -5,14 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanasaya - Tree Shop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/vanasetu.css">
+    <link rel="stylesheet" href="vanasaya.css">
+    <link rel="stylesheet" href="style.css">
+
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-success">
       <div class="container">
         <a class="navbar-brand" href="index.html">Vanasaya</a>
       </div>
-    </nav>
+    </nav> -->
+    <nav class="navbar">
+      <div class="logo">Vanasaya</div>
+      <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#pollution">Pollution</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+  </nav>
+
 
     <div class="container py-5">
       <h1 class="text-center mb-5">Welcome to Vanasaya Tree Shop</h1>
@@ -23,21 +35,21 @@
     {
       id: 1,
       name: "Neem Tree",
-      image: "/Images/neem2.jpeg",
+      image: "Images/neem2.jpeg",
       description: "Neem trees are known for their medicinal properties and ability to purify air.",
       price: 89
     },
     {
       id: 2,
       name: "Bamboo Tree",
-      image: "/Images/bamboo1.jpeg",
+      image: "Images/bamboo1.jpeg",
       description: "Banyan trees are sacred in many cultures and provide extensive shade.",
       price: 90
     },
     {
       id: 3,
       name: "Peepal Tree",
-      image: "/Images/peepal1.jpeg",
+      image: "Images/peepal1.jpeg",
       description: "Mango trees provide delicious fruits and are perfect for home gardens.",
       price: 95
     }
@@ -108,6 +120,6 @@
   document.addEventListener('DOMContentLoaded', initializeTreeCards);
 </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="/vanasetu.js"></script>
+    <script type="module" src="vanasaya.js"></script>
   </body>
 </html>
