@@ -5,8 +5,69 @@
     <title>Water Quality Prediction</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/style.css">
+
+<style>
+    .navbar {
+    background-color:#1d9952;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: fixed; */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+}
+#card{
+    margin-top: 20px;
+}
+
+</style>
+
 </head>
 <body class="bg-light">
+
+<nav class="navbar">
+    <div class="logo">Envira</div>
+    <ul class="nav-links">
+      <li><a href="../home.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../airlog.php">Pollution</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <!-- <div class="auth-buttons">
+      <button onclick="openModal('registerModal')">Register</button>
+      <button onclick="openModal('loginModal')">Login</button>
+      <button onclick="openModal('adminloginModal')">Admin</button>
+    </div> -->
+  </nav>
+
 
 <div class="container mt-5 d-flex justify-content-center">
     <div id="resultCard" style="
@@ -15,8 +76,7 @@
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         display: none;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    ">
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
         <div style="padding: 25px;">
             <h5 style="
                 color: #b71c1c;
@@ -237,5 +297,8 @@ fetchChartData();
 setInterval(fetchChartData, 10000);
 </script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </body>
 </html>

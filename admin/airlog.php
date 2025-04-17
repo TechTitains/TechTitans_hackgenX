@@ -67,12 +67,19 @@ if ($result->num_rows > 0) {
         <p class='mb-2 font-semibold'>PM2.5 Value: <span class='font-normal'>$pm µg/m³</span></p>
         <p class='mb-2 font-semibold'>MQ135 Air Quality: <span class='font-normal'>$ppm ppm</span></p>
         <p class='mb-2 font-semibold'>Last Updated: <span class='font-normal'>$timestamp</span></p>
-        <div class='mt-4 p-4 border-l-4 border-gray-500 bg-white bg-opacity-60'>
+        
+        <div class='mt-4 p-4 border-l-4 border-gray-500 bg-white bg-opacity-60 flex items-center justify-between'>
             <p class='text-sm'>$message</p>
+            <a href='visualization.php'>
+                <button class='ml-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition'>
+                    Visualization
+                </button>
+            </a>
         </div>
     </div>";
+    
 } else {
-    $card = "<p>No data available.</p>";
+    $card = "<p>No data available.</p> ";
 }
 $conn->close();
 ?>
