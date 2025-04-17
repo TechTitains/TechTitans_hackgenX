@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envira - Environmental Awareness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Envira</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="airlog.php">Pollution</a></li>
+            <li><a href="#">LOGOUT</a></li>
+        </ul>
+    </nav>
+
+    <div class="slider" id="home">
+        <div class="slide-content">
+            <h1>Save Our Planet</h1>
+            <p>Together we can make a difference</p>
+        </div>
+    </div>
+
+    <section class="pollution-cards" id="pollution" aria-label="Pollution Types">
+        <article class="card water-pollution">
+          <h2>Water Pollution</h2>
+          <p>
+            Water pollution harms marine life and puts human health at risk. 
+            Protecting our lakes, rivers, and oceans is essential to ensure clean water for everyone.
+          </p>
+          <img 
+            src="Images/water_pollution.jpeg" 
+            alt="Polluted water body" 
+            class="card-image"
+          />
+          <button class="learn-more" aria-label="Learn more about water pollution">
+            Discover More
+          </button>
+        </article>
+      
+        <article class="card air-pollution">
+          <h2>Air Pollution</h2>
+          <p>
+            Air pollution is a serious threat to our health and environment. 
+            Clean air is essential for life — let's take action to reduce emissions and pollution to breathe easier.
+          </p>
+          <img 
+            src="Images/air_pollution.jpeg" 
+            alt="Smoggy city skyline" 
+            class="card-image"
+          />
+          <a href="airlog.php"><button class="learn-more" aria-label="Learn more about air pollution">
+            Find Out More
+          </button></a>
+        </article>
+      </section>
+
+    
+    
+
+      <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Envira</h3>
+                <p>Making Earth a better place</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@envira.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Envira. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+   
+    <iframe 
+    src="chatbot.html" 
+    style="position: fixed; bottom: 20px; right: 20px; width: 350px; height: 500px; border: none; border-radius: 12px;"
+  ></iframe>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -52,7 +52,7 @@ body{
         <li><a href="home.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="airlog.php">Pollution</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="../index.html">LOGOUT</a></li>
         <!-- <li><a href="notification.php"  ><i  class="bi bi-envelope-exclamation-fill" ></i></a></li> -->
       </ul>
     </nav>

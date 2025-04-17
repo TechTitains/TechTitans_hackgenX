@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Envira - Environmental Awareness</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Navbar Buttons */
+    .auth-buttons {
+      margin-left: auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    .auth-buttons button {
+      padding: 8px 16px;
+      background-color: #2d6a4f;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .auth-buttons button:hover {
+      background-color: #1b4d36;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-content h2 {
+      margin-bottom: 15px;
+      color: #2d6a4f;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .modal-content button {
+      width: 100%;
+      padding: 10px;
+      background-color: #2d6a4f;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .modal-content button:hover {
+      background-color: #1b4d36;
+    }
+
+    .close {
+      float: right;
+      font-size: 22px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Envira</div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="airlog.php">Pollution</a></li>
+    
+    </ul>
+    <div class="auth-buttons">
+      
+      <a href ="index.html"><button >Logout</button></a>
+    </div>
+  </nav>
+
+  <div class="slider" id="home">
+    <div class="slide-content">
+      <h1>Save Our Planet</h1>
+      <p>Together we can make a difference</p>
+    </div>
+  </div>
+
+  <section class="pollution-cards" id="pollution" aria-label="Pollution Types">
+    <article class="card water-pollution">
+      <h2>Water Pollution</h2>
+      <p>
+        Water pollution harms marine life and puts human health at risk.
+        Protecting our lakes, rivers, and oceans is essential to ensure clean water for everyone.
+      </p>
+      <img src="Images/water_pollution.jpeg" alt="Polluted water body" class="card-image"/>
+      <button class="learn-more" aria-label="Learn more about water pollution">Discover More</button>
+    </article>
+
+    <article class="card air-pollution">
+      <h2>Air Pollution</h2>
+      <p>
+        Air pollution is a serious threat to our health and environment.
+        Clean air is essential for life — let's take action to reduce emissions and pollution to breathe easier.
+      </p>
+      <img src="Images/air_pollution.jpeg" alt="Smoggy city skyline" class="card-image"/>
+      <a href="airlog.php">
+        <button class="learn-more" aria-label="Learn more about air pollution">Find Out More</button>
+      </a>
+    </article>
+  </section>
+
+  <!-- Vanasaya card -->
+  <section class="vanasaya-section" style="width: 100%; background-color: #f0f8f5; padding: 3rem 1rem; display: flex; justify-content: center;">
+    <div class="card wide-card" style="width: 100%; max-width: 1200px; background-color: #ffffff; padding: 0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); overflow: hidden; text-align: center;">
+      <img src="Images/vanasaya.jpg" alt="People planting trees in a green field" style="width: 100%; height: 300px; object-fit: cover; display: block;"/>
+      <div style="padding: 2rem;">
+        <h2 style="margin-bottom: 1rem; color: #2d6a4f;">Plant Trees, Save Earth</h2>
+        <p style="font-size: 1rem; line-height: 1.6; color: #333;">
+          Trees are vital for our planet's health. They provide oxygen, reduce carbon dioxide,
+          prevent soil erosion, and support wildlife. Join our initiative to make Earth greener.
+        </p>
+        <a href="vanasaya.html">
+          <button class="vanasaya-btn" style="background-color: #2d6a4f; color: #fff; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; margin-top: 1.5rem;">
+            Vanasaya
+          </button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Envira</h3>
+        <p>Making Earth a better place</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: info@envira.com</p>
+        <p>Phone: (555) 123-4567</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Envira. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Chatbot -->
+  <iframe src="chatbot.html" style="position: fixed; bottom: 20px; right: 20px; width: 350px; height: 500px; border: none; border-radius: 12px;"></iframe>
+
+  
+
+  
+
+  <!-- JS -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    // Close modal on click outside
+    window.onclick = function(event) {
+      const register = document.getElementById('registerModal');
+      const login = document.getElementById('loginModal');
+      if (event.target === register) register.style.display = "none";
+      if (event.target === login) login.style.display = "none";
+    };
+  </script>
+</body>
+</html>

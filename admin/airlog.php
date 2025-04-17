@@ -82,7 +82,8 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Air Quality Monitor</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <link rel="stylesheet" href="style.css">
 
     <!-- <link rel="stylesheet" href="style.css"> -->
 <!-- CDN's -->
@@ -172,7 +173,7 @@ $conn->close();
         <li><a href="home.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="airlog.php">Pollution</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="../index.html">LOGOUT</a></li>
         <li><a href="notification.php"><i  class="bi bi-envelope-exclamation-fill" ></i></a></li>
       </ul>
     </nav>
@@ -182,84 +183,88 @@ $conn->close();
             <?= $card ?>
         </div>
 
-        <!-- Educational Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Poor Air Quality Card -->
-            <div class="rounded-lg p-6 bg-red-100 bg-opacity-70 shadow-lg">
-                <h2 class="text-2xl font-bold text-red-800 mb-4">Poor Air Quality</h2>
-                <div class="space-y-4">
-                    <div>
-                        <h3 class="font-semibold text-red-700">PM2.5 Range:</h3>
-                        <p>Above 150 µg/m³</p>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-red-700">Air Quality Index:</h3>
-                        <p>201-300 (Very Unhealthy)</p>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-red-700">Preventive Measures:</h3>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li>Avoid outdoor activities</li>
-                            <li>Wear N95 masks when outside</li>
-                            <li>Keep windows closed</li>
-                            <li>Use air purifiers indoors</li>
-                            <li>Stay hydrated</li>
-                        </ul>
-                    </div>
-                </div>
+       <!-- Rules & Regulations Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- High Pollution Level Rules -->
+    <div class="rounded-lg p-6 bg-red-100 bg-opacity-70 shadow-lg">
+        <h2 class="text-2xl font-bold text-red-800 mb-4">High Pollution Areas</h2>
+        <div class="space-y-4">
+            <div>
+                <h3 class="font-semibold text-red-700">PM2.5 Range:</h3>
+                <p>Above 150 µg/m³</p>
             </div>
-
-            <!-- Moderate Air Quality Card -->
-            <div class="rounded-lg p-6 bg-yellow-100 bg-opacity-70 shadow-lg">
-                <h2 class="text-2xl font-bold text-yellow-800 mb-4">Moderate Air Quality</h2>
-                <div class="space-y-4">
-                    <div>
-                        <h3 class="font-semibold text-yellow-700">PM2.5 Range:</h3>
-                        <p>51-150 µg/m³</p>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-yellow-700">Air Quality Index:</h3>
-                        <p>101-200 (Unhealthy for Sensitive Groups)</p>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-yellow-700">Preventive Measures:</h3>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li>Limit outdoor activities</li>
-                            <li>Use masks if sensitive</li>
-                            <li>Keep windows closed during peak hours</li>
-                            <li>Monitor symptoms</li>
-                            <li>Regular air quality checks</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Good Air Quality Card -->
-            <div class="rounded-lg p-6 bg-green-100 bg-opacity-70 shadow-lg">
-                <h2 class="text-2xl font-bold text-green-800 mb-4">Good Air Quality</h2>
-                <div class="space-y-4">
-                    <div>
-                        <h3 class="font-semibold text-green-700">PM2.5 Range:</h3>
-                        <p>0-50 µg/m³</p>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-green-700">Air Quality Index:</h3>
-                        <p>0-100 (Good to Moderate)</p>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-green-700">Preventive Measures:</h3>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li>Enjoy outdoor activities</li>
-                            <li>Open windows for ventilation</li>
-                            <li>Regular outdoor exercise safe</li>
-                            <li>Maintain good indoor air quality</li>
-                            <li>Continue monitoring AQI</li>
-                        </ul>
-                    </div>
-                </div>
+            <div>
+                <h3 class="font-semibold text-red-700">Regulatory Measures:</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Restrict vehicular movement on peak days</li>
+                    <li>Ban construction and industrial emissions temporarily</li>
+                    <li>Deploy air purification towers in hotspots</li>
+                    <li>Conduct pollution control audits frequently</li>
+                    <li>Mandate working from home for offices</li>
+                </ul>
             </div>
         </div>
     </div>
+
+    <!-- Moderate Pollution Level Rules -->
+    <div class="rounded-lg p-6 bg-yellow-100 bg-opacity-70 shadow-lg">
+        <h2 class="text-2xl font-bold text-yellow-800 mb-4">Moderate Pollution Areas</h2>
+        <div class="space-y-4">
+            <div>
+                <h3 class="font-semibold text-yellow-700">PM2.5 Range:</h3>
+                <p>51-150 µg/m³</p>
+            </div>
+            <div>
+                <h3 class="font-semibold text-yellow-700">Regulatory Measures:</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Implement odd-even traffic rules</li>
+                    <li>Limit emissions from factories with temporary caps</li>
+                    <li>Promote use of public transport and EVs</li>
+                    <li>Monitor pollution sources regularly</li>
+                    <li>Increase green zone coverage</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Low Pollution Level Rules -->
+    <div class="rounded-lg p-6 bg-green-100 bg-opacity-70 shadow-lg">
+        <h2 class="text-2xl font-bold text-green-800 mb-4">Low Pollution Areas</h2>
+        <div class="space-y-4">
+            <div>
+                <h3 class="font-semibold text-green-700">PM2.5 Range:</h3>
+                <p>0-50 µg/m³</p>
+            </div>
+            <div>
+                <h3 class="font-semibold text-green-700">Proactive Measures:</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Encourage sustainable practices</li>
+                    <li>Expand green spaces and plantations</li>
+                    <li>Promote solar and clean energy</li>
+                    <li>Run awareness and education campaigns</li>
+                    <li>Maintain regular AQI monitoring infrastructure</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Envira</h3>
+                <p>Making Earth a better place</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@envira.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Envira. All rights reserved.</p>
+        </div>
+    </footer> -->
 
     <!-- Auto Refresh Script -->
     <script>
