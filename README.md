@@ -3,9 +3,9 @@
 ## Project Name: Envira 
 objective:Develop an AI-powered system for real-time pollution detection. Integrate IoT sensors to monitor air and water quality while enabling automated alerts for authorities and citizens.
 
-`### Key features and Modules
+### Key features and Modules
 
-## #System Modules
+### System Modules
 
 #### 1️ User Module
 Users can view real-time pollution data through interactive visualizations.
