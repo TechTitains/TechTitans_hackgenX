@@ -1,11 +1,11 @@
-#TechTitans_hackgenX
+# TechTitans_hackgenX
 
-##Project Name: Envira 
+## Project Name: Envira 
 objective:Develop an AI-powered system for real-time pollution detection. Integrate IoT sensors to monitor air and water quality while enabling automated alerts for authorities and citizens.
 
-`###Key features and Modules
+`### Key features and Modules
 
-###System Modules
+## #System Modules
 
 ####1️ User Module
 Users can view real-time pollution data through interactive visualizations.
@@ -25,25 +25,25 @@ A unique feature where users can adopt trees.
 Contributes directly to reducing pollution levels.
 Offers a green certificate or token to adopters.
 
-####* AI Chatbot
+#### * AI Chatbot
 Provides environment-related guidance.
 Answers queries about pollution and its impact.
 Assists both users and authorities with instant responses.
 
-####* IoT-Integrated Real-Time Monitoring
+#### * IoT-Integrated Real-Time Monitoring
 IoT sensors capture air and water quality data live.
 Data is stored in a MySQL database for analysis and visualization.
 Instant alerts and visual dashboards available for both users and authorities.
 
-####* Smart Alert System
+#### * Smart Alert System
 Sends real-time notifications to users when pollution crosses safe limits.
 Automatically dispatches advisories to concerned authorities for preventive action.
 
-####* AI-Powered Prediction
+#### * AI-Powered Prediction
 Trained using real-time sensor data to forecast pollution status.
 Helps both users and authorities stay proactive about environmental risks.
 
-####* Tech Stack
+#### * Tech Stack
 Frontend: HTML, CSS, JavaScript, Bootstrap
 Backend: PHP, Node.js
 Database: MySQL
