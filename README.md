@@ -1,7 +1,7 @@
 # TechTitans_hackgenX
 
 ## Project Name: Envira 
-### Objective:
+### objective:
 Develop an AI-powered system for real-time pollution detection. Integrate IoT sensors to monitor air and water quality while enabling automated alerts for authorities and citizens.
 
 ### Key features and Modules
@@ -20,8 +20,8 @@ Receive automated advisories when critical pollution levels are detected.
 Access historical pollution trends for better decision-making.
 Coordinate rapid response actions based on AI predictions.
 
-### Key Features
-#### * Vanasaya Program
+### * Key Features
+#### Vanasaya Program
 A unique feature where users can adopt trees.
 Contributes directly to reducing pollution levels.
 Offers a green certificate or token to adopters.
@@ -40,6 +40,7 @@ Instant alerts and visual dashboards available for both users and authorities.
 Sends real-time notifications to users when pollution crosses safe limits.
 Automatically dispatches advisories to concerned authorities for preventive action.
 
+
 #### * AI-Powered Prediction
 Trained using real-time sensor data to forecast pollution status.
 Helps both users and authorities stay proactive about environmental risks.
@@ -50,6 +51,16 @@ Backend: PHP, Node.js
 Database: MySQL
 AI Model: Decision Tree 
 IoT Integration: Sensor data ingestion and real-time monitoring.
+
+#### Database Used (MySQL)
+The below water data  is the fetched data from the sensor and stored to use for prediction
+[water_pollution.csv](https://github.com/user-attachments/files/19789355/water_pollution.csv)
+
+For Air quality the real time data is stored in the backend and then fetched for predictions.
+
+## Getting started 
+* Frontend: Navigate to your frontend directory ,install dependencies and run
+* Backend: Navigate to the api directory. Install dependencies from the package.json. Run the backend server server.js
 
 
 
