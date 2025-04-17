@@ -1,7 +1,7 @@
 # TechTitans_hackgenX
 
 ## Project Name: Envira 
-### objective:
+### Objective:
 Develop an AI-powered system for real-time pollution detection. Integrate IoT sensors to monitor air and water quality while enabling automated alerts for authorities and citizens.
 
 ### Key features and Modules
@@ -20,8 +20,8 @@ Receive automated advisories when critical pollution levels are detected.
 Access historical pollution trends for better decision-making.
 Coordinate rapid response actions based on AI predictions.
 
-### * Key Features
-#### Vanasaya Program
+### Key Features
+#### * Vanasaya Program
 A unique feature where users can adopt trees.
 Contributes directly to reducing pollution levels.
 Offers a green certificate or token to adopters.
