@@ -1,227 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enviro Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .chatbot-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #1d9952;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    .chat-window {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 350px;
+      height: 500px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
 
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-      }
-      .chatbot-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #2563eb;
-        color: white;
-        padding: 15px;
-        border-radius: 50%;
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      }
-      .chat-window {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 350px;
-        height: 500px;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-      }
-      .chat-header {
-        background-color: #2563eb;
-        color: white;
-        padding: 30px;
-        font-weight: bold;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .chat-body {
-        flex: 1;
-        padding: 15px;
-        overflow-y: auto;
-      }
-      .chat-message {
-        margin-bottom: 15 px;
-        padding: 10px 15px;
-        border-radius: 10px;
-        max-width: 75%;
-        word-wrap: break-word;
-      }
-      .bot {
-        background-color: #f3f4f6;
-        color: #1f2937;
-        align-self: flex-start;
-      }
-      .user {
-        background-color: #2563eb;
-        color: white;
-        align-self: flex-end;
-      }
-      .chat-footer {
-        border-top: 1px solid #e5e7eb;
-        padding: 10px;
-        display: flex;
-        gap: 10px;
-      }
-      .chat-footer input {
-        flex: 1;
-        padding: 10px;
-        border: 1px solid #d1d5db;
-        border-radius: 8px;
-        outline: none;
-      }
-      .chat-footer button {
-        background-color: #2563eb;
-        color: white;
-        border: none;
-        padding: 10px 12px;
-        border-radius: 8px;
-        cursor: pointer;
-      }
-      img.response-img {
-        margin-top: 10px;
-        max-height: 150px;
-        width: auto;
-        border-radius: 8px;
-      }
-      .source-link {
-        font-size: 12px;
-        margin-top: 4px;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Chat button -->
-    <button class="chatbot-btn" id="toggleChat">💬</button>
+      transform: scale(0.95);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .chat-window.show {
+      transform: scale(1);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .chat-header {
+      background-color:#1d9952;
+      color: white;
+      padding: 30px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .chat-body {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+    }
+    .chat-message {
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      border-radius: 10px;
+      max-width: 75%;
+      word-wrap: break-word;
+    }
+    .bot {
+      background-color: #f3f4f6;
+      color: #1f2937;
+      align-self: flex-start;
+    }
+    .user {
+      background-color:#1d9952;
+      color: white;
+      align-self: flex-end;
+    }
+    .chat-footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    .chat-footer input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      outline: none;
+    }
+    .chat-footer button {
+      background-color:#1d9952;
+      color: white;
+      border: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    img.response-img {
+      margin-top: 10px;
+      max-height: 150px;
+      width: auto;
+      border-radius: 8px;
+    }
+    .source-link {
+      font-size: 12px;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Chat button -->
+  <button class="chatbot-btn" id="toggleChat">💬</button>
 
-    <!-- Chat window -->
-    <div class="chat-window" id="chatWindow" style="display: none">
-      <div class="chat-header">
-        Enviro
-        <span style="cursor: pointer" id="closeChat">✖</span>
-      </div>
-      <div class="chat-body" id="chatBody">
-        <div class="chat-message bot">
-          Hello! I'm Enviro. How can I help you today?
-        </div>
-      </div>
-      <div class="chat-footer">
-        <input type="text" id="userInput" placeholder="Type your message..." />
-        <button id="sendBtn">Send</button>
+  <!-- Chat window -->
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      Enviro
+      <span style="cursor: pointer" id="closeChat">✖</span>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="chat-message bot">
+        Hello! I'm Enviro. How can I help you today?
       </div>
     </div>
+    <div class="chat-footer">
+      <input type="text" id="userInput" placeholder="Type your message..." />
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
 
-    <script>
-      const API_KEY = "AIzaSyCbKe2Cy4JZTELJQLN0_-YcS41KBhe_xDs";
-      const SEARCH_ENGINE_ID = "c601888d1caf04531";
+  <script>
+    const API_KEY = "AIzaSyCbKe2Cy4JZTELJQLN0_-YcS41KBhe_xDs";
+    const SEARCH_ENGINE_ID = "c601888d1caf04531";
 
-      const toggleChat = document.getElementById("toggleChat");
-      const chatWindow = document.getElementById("chatWindow");
-      const closeChat = document.getElementById("closeChat");
-      const chatBody = document.getElementById("chatBody");
-      const userInput = document.getElementById("userInput");
-      const sendBtn = document.getElementById("sendBtn");
+    const toggleChat = document.getElementById("toggleChat");
+    const chatWindow = document.getElementById("chatWindow");
+    const closeChat = document.getElementById("closeChat");
+    const chatBody = document.getElementById("chatBody");
+    const userInput = document.getElementById("userInput");
+    const sendBtn = document.getElementById("sendBtn");
 
-      toggleChat.onclick = () => (chatWindow.style.display = "flex");
-      closeChat.onclick = () => (chatWindow.style.display = "none");
+    toggleChat.onclick = () => {
+      chatWindow.classList.toggle("show");
+    };
 
-      async function getBotReply(input) {
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${API_KEY}`;
-        const body = {
-          contents: [{ role: "user", parts: [{ text: input }] }],
-        };
+    closeChat.onclick = () => {
+      chatWindow.classList.remove("show");
+    };
 
-        try {
-          const response = await fetch(url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(body),
-          });
-          const data = await response.json();
-          return (
-            data?.candidates?.[0]?.content?.parts?.[0]?.text ||
-            "Sorry, I couldn't understand that."
-          );
-        } catch (err) {
-          console.error("Gemini error:", err);
-          return "Oops! Something went wrong.";
+    async function getBotReply(input) {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${API_KEY}`;
+      const body = {
+        contents: [{ role: "user", parts: [{ text: input }] }],
+      };
+
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+        const data = await response.json();
+        return (
+          data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+          "Sorry, I couldn't understand that."
+        );
+      } catch (err) {
+        console.error("Gemini error:", err);
+        return "Oops! Something went wrong.";
+      }
+    }
+
+    async function getImageResults(query) {
+      const url = `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${SEARCH_ENGINE_ID}&q=${encodeURIComponent(
+        query
+      )}&searchType=image&num=1`;
+
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        if (data?.items?.length > 0) {
+          return {
+            imageUrl: data.items[0].link,
+            source: data.items[0].image.contextLink,
+          };
+        }
+        return null;
+      } catch (err) {
+        console.error("Image Search Error:", err);
+        return null;
+      }
+    }
+
+    function addMessage(text, isBot, imageData = null) {
+      const msg = document.createElement("div");
+      msg.className = `chat-message ${isBot ? "bot" : "user"}`;
+      msg.innerText = text;
+
+      if (isBot && imageData?.imageUrl) {
+        const img = document.createElement("img");
+        img.src = imageData.imageUrl;
+        img.className = "response-img";
+        msg.appendChild(img);
+
+        if (imageData.source) {
+          const link = document.createElement("a");
+          link.href = imageData.source;
+          link.innerText = "Image Source";
+          link.className = "source-link";
+          link.target = "_blank";
+          msg.appendChild(document.createElement("br"));
+          msg.appendChild(link);
         }
       }
 
-      async function getImageResults(query) {
-        const url = `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${SEARCH_ENGINE_ID}&q=${encodeURIComponent(
-          query
-        )}&searchType=image&num=1`;
+      chatBody.appendChild(msg);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
 
-        try {
-          const res = await fetch(url);
-          const data = await res.json();
-          if (data?.items?.length > 0) {
-            return {
-              imageUrl: data.items[0].link,
-              source: data.items[0].image.contextLink,
-            };
-          }
-          return null;
-        } catch (err) {
-          console.error("Image Search Error:", err);
-          return null;
-        }
+    async function handleSend() {
+      const msg = userInput.value.trim();
+      if (!msg) return;
+
+      addMessage(msg, false);
+      userInput.value = "";
+      addMessage("Enviro is typing...", true);
+
+      const [reply, image] = await Promise.all([
+        getBotReply(msg),
+        getImageResults(msg),
+      ]);
+
+      const last = chatBody.querySelector(".chat-message.bot:last-child");
+      if (last && last.innerText === "Enviro is typing...") {
+        chatBody.removeChild(last);
       }
 
-      function addMessage(text, isBot, imageData = null) {
-        const msg = document.createElement("div");
-        msg.className = `chat-message ${isBot ? "bot" : "user"}`;
-        msg.innerText = text;
+      addMessage(reply, true, image);
+    }
 
-        if (isBot && imageData?.imageUrl) {
-          const img = document.createElement("img");
-          img.src = imageData.imageUrl;
-          img.className = "response-img";
-          msg.appendChild(img);
-
-          if (imageData.source) {
-            const link = document.createElement("a");
-            link.href = imageData.source;
-            link.innerText = "Image Source";
-            link.className = "source-link";
-            link.target = "_blank";
-            msg.appendChild(document.createElement("br"));
-            msg.appendChild(link);
-          }
-        }
-
-        chatBody.appendChild(msg);
-        chatBody.scrollTop = chatBody.scrollHeight;
-      }
-
-      async function handleSend() {
-        const msg = userInput.value.trim();
-        if (!msg) return;
-
-        addMessage(msg, false);
-        userInput.value = "";
-        addMessage("Enviro is typing...", true);
-
-        const [reply, image] = await Promise.all([
-          getBotReply(msg),
-          getImageResults(msg),
-        ]);
-
-        // Remove "Enviro is typing..." message
-        const last = chatBody.querySelector(".chat-message.bot:last-child");
-        if (last && last.innerText === "Enviro is typing...") {
-          chatBody.removeChild(last);
-        }
-
-        addMessage(reply, true, image);
-      }
-
-      sendBtn.onclick = handleSend;
-      userInput.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") handleSend();
-      });
-    </script>
-  
+    sendBtn.onclick = handleSend;
+    userInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") handleSend();
+    });
+  </script>
+</body>
+</html>

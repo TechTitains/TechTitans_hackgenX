@@ -206,7 +206,6 @@ $conn->close();
         </div>
     </div>
 
-    <!-- Moderate Pollution Level Rules -->
     <div class="rounded-lg p-6 bg-yellow-100 bg-opacity-70 shadow-lg">
         <h2 class="text-2xl font-bold text-yellow-800 mb-4">Moderate Pollution Areas</h2>
         <div class="space-y-4">
@@ -227,7 +226,7 @@ $conn->close();
         </div>
     </div>
 
-    <!-- Low Pollution Level Rules -->
+    
     <div class="rounded-lg p-6 bg-green-100 bg-opacity-70 shadow-lg">
         <h2 class="text-2xl font-bold text-green-800 mb-4">Low Pollution Areas</h2>
         <div class="space-y-4">

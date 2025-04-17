@@ -221,10 +221,10 @@ $conn->close();
         });
     }
 
-    // Initial chart render
+  
     renderCharts(labels, pm25Data, aqData, pieCounts);
 
-    // Refresh data every 5 seconds
+    
     setInterval(() => {
         fetch('fetch_data.php')
             .then(response => response.json())
